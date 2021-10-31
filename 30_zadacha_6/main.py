@@ -3,7 +3,7 @@ import re
 
 results = requests.get('http://www.columbia.edu/~fdc/sample.html')
 
-example_good_number = r'[<h3 id=]{7}(.{0,900})[</h3>]{5}'
+example_good_number = r'[<h3 id=]{7}.{0,999}[>]{1}(.{0,999})[</h3>]{5}'
 
 list_h3 = re.findall(example_good_number, results.text)
 
